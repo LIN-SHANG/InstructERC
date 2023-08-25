@@ -2,7 +2,7 @@
 
 
 ## 🎥 Overview
-This is the repository for our work **SKP**, which is recieved by **CIKM 2023**.
+This is the repository for our work **InstructERC**, which is working process.
 
 ## Introduction
 In this study, we propose a novel approach, namely **InstructERC, to reformulates the ERC task from a discriminative framework to a generative framework based on LLMs.** InstructERC has two significant contributions: Firstly, InstructERC introduces a simple yet effective retrieval template module, which helps the model explicitly integrate multi-granularity dialogue supervision information by concatenating the historical dialog content, label statement, and emotional domain demonstrations with high semantic similarity. Furthermore, we introduce two additional emotion alignment tasks, namely speaker identification and emotion prediction tasks, to implicitly model the dialogue role relationships and future emotional tendencies in conversations. **Our LLM-based plug-and-play plugin framework significantly outperforms all previous models and achieves comprehensive SOTA on three commonly used ERC datasets.** Extensive analysis of parameter-efficient and data-scaling experiments provide empirical guidance for applying InstructERC in practical scenarios. Our code will be released after blind review.
@@ -12,7 +12,9 @@ In this study, we propose a novel approach, namely **InstructERC, to reformulate
 
 
 ## 🎯 Quick Start
+Our code is coming soon in two weeks.
 
+<!-- 
 Our work is built on the [UniK-QA](https://github.com/facebookresearch/UniK-QA) framework.
 
 
@@ -235,3 +237,4 @@ SFT
 
 
 
+-->
