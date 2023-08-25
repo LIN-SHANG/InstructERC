@@ -5,9 +5,9 @@
 This is the repository for our work **SKP**, which is recieved by **CIKM 2023**.
 
 ## Introduction
-We propose a **S**tructured **K**nowledge-aware **P**re-training method (**SKP**). In the pre-training stage, we introduce two novel structured knowledge-aware tasks, guiding the model to effectively learn the implicit relationship and better representations of complex subgraphs. 
-In downstream KBQA task, we further design an efficient linearization strategy and an interval attention mechanism, which assist the model to better encode complex subgraphs and shield the interference of irrelevant subgraphs during reasoning respectively.
-Detailed experiments and analyses on WebQSP verify the effectiveness of SKP, especially the significant improvement in subgraph retrieval (+4.08% H@10).
+The development of emotion recognition in dialogue (ERC) has been consistently hindered by the complexity of pipeline designs, leading to ERC models that often overfit to specific datasets and dialogue patterns.
+In this study, we propose a novel approach, namely
+**InstructERC, to reformulates the ERC task from a discriminative framework to a generative framework based on LLMs.** InstructERC has two significant contributions: Firstly, InstructERC introduces a simple yet effective retrieval template module, which helps the model explicitly integrate multi-granularity dialogue supervision information by concatenating the historical dialog content, label statement, and emotional domain demonstrations with high semantic similarity. Furthermore, we introduce two additional emotion alignment tasks, namely speaker identification and emotion prediction tasks, to implicitly model the dialogue role relationships and future emotional tendencies in conversations. **Our LLM-based plug-and-play plugin framework significantly outperforms all previous models and achieves comprehensive SOTA on three commonly used ERC datasets.** Extensive analysis of parameter-efficient and data-scaling experiments provide empirical guidance for applying InstructERC in practical scenarios. Our code will be released after blind review.
 
 ## 🍯 Overall Framework
 ![image](https://github.com/LIN-SHANG/InstructERC/assets/60767110/c0cc9d87-2bea-4783-97be-f1d319c61ec3)
