@@ -10,7 +10,8 @@ In downstream KBQA task, we further design an efficient linearization strategy a
 Detailed experiments and analyses on WebQSP verify the effectiveness of SKP, especially the significant improvement in subgraph retrieval (+4.08% H@10).
 
 ## 🍯 Overall Framework
-<img width="733" alt="image" src="https://github.com/dongguanting/Structured-Knowledge-aware-Pretraining-for-KBQA/assets/60767110/c63e55fb-0cee-474c-8dbf-392498ad24e6">
+![image](https://github.com/LIN-SHANG/InstructERC/assets/60767110/c0cc9d87-2bea-4783-97be-f1d319c61ec3)
+
 
 ## 🎯 Quick Start
 
