@@ -12,26 +12,29 @@ In this study, we propose a novel approach, namely **InstructERC, to reformulate
 
 
 ## 🎯 Quick Start
-Our code is coming soon in two weeks.
 
-<!-- 
 Our work is built on the [UniK-QA](https://github.com/facebookresearch/UniK-QA) framework.
 
 
 ### Dependencies
+Make sure your Devtoolset-8-toolchain' version align with us:
+```
+yum install devtoolset-8-toolchain
+yum install gcc 9.3.1
+```
 
 General Setup Environment:
 - Python 3
 - [NumPy](http://www.numpy.org/)
-- [PyTorch](http://pytorch.org/) (currently tested on version 1.6.0)
-- [Transformers](http://huggingface.co/transformers/) (version 3.0.2, unlikely to work with a different version)
+- [PyTorch](http://pytorch.org/) (currently tested on version 2.0.0)
+- [Transformers](http://huggingface.co/transformers/) (version 4.30.2, unlikely to work with a different version)
 
-DPR Setup Environment:
+InstructERC Setup Environment:
 ```
-cd ./KBQA/DPR-main/
+cd ./InstructERC/Envs/
 pip3 install -r requirements.txt
 ```
-
+<i--
 ### Data Preprocessing
 
 ```
