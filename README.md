@@ -5,7 +5,24 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instructerc-reforming-emotion-recognition-in/emotion-recognition-in-conversation-on-meld)](https://paperswithcode.com/sota/emotion-recognition-in-conversation-on-meld?p=instructerc-reforming-emotion-recognition-in)
 
 ## 🎥 Overview
-This is the repository for our work **InstructERC**, which is working process.
+
+This repository contains the open-sourced official implementation of our work **InstructERC**, which is working process:
+
+[InstructERC: Reforming Emotion Recognition in Conversation with a Retrieval Multi-task LLMs Framework](https://arxiv.org/abs/2309.11911)
+
+
+If you find this repo helpful, please cite the following paper:
+
+```bibtex
+@misc{lei2023instructerc,
+      title={InstructERC: Reforming Emotion Recognition in Conversation with a Retrieval Multi-task LLMs Framework}, 
+      author={Shanglin Lei and Guanting Dong and Xiaoping Wang and Keheng Wang and Sirui Wang},
+      year={2023},
+      eprint={2309.11911},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
 ## Introduction
 In this study, we propose a novel approach, namely **InstructERC, to reformulates the ERC task from a discriminative framework to a generative framework based on LLMs.** InstructERC has two significant contributions: Firstly, InstructERC introduces a simple yet effective retrieval template module, which helps the model explicitly integrate multi-granularity dialogue supervision information by concatenating the historical dialog content, label statement, and emotional domain demonstrations with high semantic similarity. Furthermore, we introduce two additional emotion alignment tasks, namely speaker identification and emotion prediction tasks, to implicitly model the dialogue role relationships and future emotional tendencies in conversations. **Our LLM-based plug-and-play plugin framework significantly outperforms all previous models and achieves comprehensive SOTA on three commonly used ERC datasets.** Extensive analysis of parameter-efficient and data-scaling experiments provide empirical guidance for applying InstructERC in practical scenarios. Our code will be released after blind review.
