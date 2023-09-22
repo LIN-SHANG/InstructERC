@@ -6,7 +6,7 @@
 
 ## 🎥 Overview
 
-This repository contains the open-sourced official implementation of our work **InstructERC**, which is working process:
+This repository contains the open-sourced official implementation of our work **InstructERC**:
 
 [InstructERC: Reforming Emotion Recognition in Conversation with a Retrieval Multi-task LLMs Framework](https://arxiv.org/abs/2309.11911)
 
