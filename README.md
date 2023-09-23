@@ -285,7 +285,7 @@ After completing the label mapping, there are a total of 9 kinds of emotional la
 
 
 Figure2: The Feeling Wheel[^1]
-
+<img width="668" alt="image" src="https://github.com/LIN-SHANG/InstructERC/assets/48848639/65526715-d02f-41f6-b0d8-3e5da7311e3f">
 
 
 Table 3: Unified Label Mapping
@@ -305,8 +305,9 @@ Table 3: Unified Label Mapping
 
 ### A.2 Unified dataset Experiment
 We still utilize the LoRA method in PEFT to train InstructERC on the unified dataset, and the training results are evaluated on the three datasets respectively. Meanwhile, we design total mix and ratio mix experiments to explore the impact of different data mixing strategies and data quantities on the model. On below basis, we further explore the impact of data sampling ratio on the model's performance.
-The details are shown in the Table 5, a more intutive presentation is shown in Figure 6.
+The details are shown in the Table 4, a more intutive presentation is shown in Figure 3.
 
+Table 4: The Unified Dataset Experiments of Llama2 on three benchmarks
 | Data Precent | IEMOCAP W-F1 (Total Mix) | IEMOCAP W-F1 (Ratio Mix) | IEMOCAP W-F1 (Single) | MELD W-F1 (Total Mix) | MELD W-F1 (Ratio Mix) | MELD W-F1 (Single) | EmoryNLP W-F1 (Total Mix) | EmoryNLP W-F1 (Ratio Mix) | EmoryNLP W-F1 (Single) |
 | :------------: | ----------------------- | ----------------------- | --------------------- | --------------------- | --------------------- | ------------------ | ------------------------ | ------------------------ | ---------------------- |
 | 1            | 68.99                   | 68.99                   | **71.39**             | 68.07                 | 68.07                 | **69.15**          | 40.27                    | 40.27                    | **41.37**              |
@@ -316,6 +317,9 @@ The details are shown in the Table 5, a more intutive presentation is shown in F
 | 1/16         | 57.77                   | 53.40                   | **60.42**             | 61.15                 | 58.42                 | **62.89**          | 37.19                    | **37.60**                | 36.83                  |
 | 1/32         | 45.89                   | 48.50                   | **54.76**             | 57.38                 | **57.76**             | 57.72              | **37.09**                | 36.09                    | 34.03                  |
 | 1/64         | 38.42                   | **43.07**               | 30.34                 | **54.26**             | 53.29                 | 45.48              | **35.19**                | 34.65                    | 26.10                  |
+
+Figure 3: The low resourece exploring on three benchmarks using different data mixing strategies
+<img width="984" alt="image" src="https://github.com/LIN-SHANG/InstructERC/assets/48848639/a9a734b7-a893-4ec1-b067-dbebe6cd2ccd">
 
 
 
