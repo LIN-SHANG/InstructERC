@@ -40,7 +40,7 @@ In this study, we propose a novel approach, namely **InstructERC, to reformulate
 ```
 
 
-此Repo由以下文件组成：
+This Repo consists of the following files:
 - code
 - demo
 - data
@@ -70,6 +70,9 @@ InstructERC Setup Environment:
 cd ./InstructERC/envs/
 pip3 install -r requirements.txt
 ```
+
+The remaining instructions and files will be here soon!…………
+
 
 
 <!-- 
