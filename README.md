@@ -253,7 +253,8 @@ After completing the label mapping, there are a total of 9 kinds of emotional la
 
 
 Figure2: The Feeling Wheel[^1]
-![Uploading image.png…]()
+<img width="1188" alt="image" src="https://github.com/LIN-SHANG/InstructERC/assets/48848639/a44d9501-49f0-4d0e-bbf2-d2e26d16bc4f">
+
 
 
 
