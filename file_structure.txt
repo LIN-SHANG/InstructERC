@@ -1,0 +1,36 @@
+.
+├── checkpoint
+├── code
+│   ├── data_process_mixed.py
+│   ├── data_process_plain.py
+│   ├── data_process.py
+│   ├── data_utils
+│   ├── main_new.py
+│   ├── train_and_inference_Mixed.sh
+│   ├── train_and_inference_Plain.sh
+│   └── train_and_inference_Uni.sh
+├── data
+│   ├── EmoryNLP
+│   ├── iemocap
+│   └── meld
+├── demo
+│   └── demo.ipynb
+├── envs
+│   └── requirements.txt
+├── experiments
+├── file_structure.txt
+├── LLM_bases
+│   ├── Bloom-560m
+│   ├── ChatGLM
+│   ├── ChatGLM2
+│   ├── LLaMA
+│   └── LLaMA2
+├── original_data
+│   ├── dailydialog
+│   ├── EmoryNLP
+│   ├── iemocap
+│   ├── meld
+│   └── peek_of_dataset.ipynb
+└── README.md
+
+22 directories, 11 files

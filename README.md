@@ -1,7 +1,9 @@
 # InstructionERC
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instructerc-reforming-emotion-recognition-in/emotion-recognition-in-conversation-on-4)](https://paperswithcode.com/sota/emotion-recognition-in-conversation-on-4?p=instructerc-reforming-emotion-recognition-in)
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instructerc-reforming-emotion-recognition-in/emotion-recognition-in-conversation-on)](https://paperswithcode.com/sota/emotion-recognition-in-conversation-on?p=instructerc-reforming-emotion-recognition-in)	
+
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instructerc-reforming-emotion-recognition-in/emotion-recognition-in-conversation-on-meld)](https://paperswithcode.com/sota/emotion-recognition-in-conversation-on-meld?p=instructerc-reforming-emotion-recognition-in)
 
 ## 🎥 Overview
@@ -34,25 +36,78 @@ In this study, we propose a novel approach, namely **InstructERC, to reformulate
 ## 🎯 Quick Start
 
 <!-- Our work is built on the [UniK-QA](https://github.com/facebookresearch/UniK-QA) framework. -->
+
+
+This repo consists of following files:
 ```plain
-
-
+.
+├── checkpoint
+├── code
+│   ├── data_process_mixed.py
+│   ├── data_process_plain.py
+│   ├── data_process.py
+│   ├── data_utils
+│   ├── main_new.py
+│   ├── train_and_inference_Mixed.sh
+│   ├── train_and_inference_Plain.sh
+│   └── train_and_inference_Uni.sh
+├── data
+│   ├── EmoryNLP
+│   ├── iemocap
+│   └── meld
+├── demo
+│   └── demo.ipynb
+├── envs
+│   └── requirements.txt
+├── experiments
+├── file_structure.txt
+├── LLM_bases
+│   ├── Bloom-560m
+│   ├── ChatGLM
+│   ├── ChatGLM2
+│   ├── LLaMA
+│   └── LLaMA2
+├── original_data
+│   ├── dailydialog
+│   ├── EmoryNLP
+│   ├── iemocap
+│   ├── meld
+│   └── peek_of_dataset.ipynb
+└── README.md
 ```
+<!-- 正如以上树状结构的形式展示目录和文件的层级关系所示,InstructERC由code,data,demo, envs,LLM_bases和original_data文件夹组成, 
+- code 存放了InstructERC所有可以执行的代码,包括不同方式的数据处理data_process.py (mixed, plain),主程序文件main_new.py,data_utils和控制整个流程的bash文件train_and_inference_Uni.sh (Plain, Mixed).
 
+- data存放由original data和data_process.py脚本处理好的,直接输入给LLM的数据.
 
-This Repo consists of the following files:
-- code
-- demo
-- data
-- data_utils
-- envs
-- experiments
-- LLM_bases
-- Original_data
-- README.md
+- demo存放了能够直接加载并运行我们在特定数据上已完成finetune的LLM进行推理的脚本demo.ipynb,由jupyter notebook打开并运行.
+
+- envs存放了本项目所需要的相关依赖,环境和库,我们强烈建议您使用docker并新建一个conda的虚拟环境,以避免对您之前的环境和文件产生影响.
+
+- LLM_bases存放了官方提供的LLMs原件,我们可以在huggingface上面下载这些原件.
+
+- orignal_data存放的是由COSMIC团队处理好的,被广泛使用的数据集,包含IEMOCAP,MELD,EmoryNLP和dailydialog. -->
+
+As shown in the tree-like structure above, InstructERC consists of the following folders: code, data, demo, envs, LLM_bases, and original_data.
+- The checkpoint folder is created to storage InstructERC'checkpoint.
+(Pertraining Checkpoint, Supervised Finetuning Checkpoint at each epoch)
+
+- The code folder contains all the executable code for InstructERC, including data processing scripts such as data_process.py (mixed, plain), the main program file main_new.py, data_utils, and the bash script train_and_inference_Uni.sh (Plain, Mixed) that controls the entire workflow.
+
+- The data folder stores the data that has been processed by the data_process.py script from the original data. This processed data can be directly fed into the LLM (Large Language Model) as input.
+
+- The demo folder contains the script demo.ipynb, which can be loaded and run directly on the LLM that has been finetuned on specific data. It can be opened and run using Jupyter Notebook.
+
+- The envs folder contains the relevant dependencies, environments, and libraries required for this project. We strongly recommend using Docker and creating a new Conda virtual environment to avoid affecting your existing environment and files.
+
+- The experiments folder is created to storage the result under different experiment's settings.
+
+- The LLM_bases folder stores the original models provided by the official LLMs. These models can be downloaded from Hugging Face.
+
+- The original_data folder contains the widely used datasets processed by the COSMIC team, including IEMOCAP, MELD, EmoryNLP, and dailydialog. We write a script for you to have a peek of these datasets, namely peek_of_dataset.ipynb.
 
 ### Dependencies
-We suggest you create a docker envirment for InstructERC to ensure that your previous systems, libraries and files are not effected.
+We suggest you create a docker environment for InstructERC to ensure that your previous systems, libraries and files are not effected.
 Make sure your Devtoolset-8-toolchain' version align with us:
 ```
 yum install devtoolset-8-toolchain
@@ -71,173 +126,80 @@ cd ./InstructERC/envs/
 pip3 install -r requirements.txt
 ```
 
-The remaining instructions and files will be here soon!…………
+### LLMs download
+Follow this [link](https://huggingface.co/docs/hub/models-downloading).
 
+### ONLY Validate Our Work
+You can follow following instructions to reproduce the results by using files in demo folders.
 
+COMING SOON……
 
-<!-- 
-### Data Preprocessing
-
+### Completely repeat all our work
 ```
-wget https://dl.fbaipublicfiles.com/UniK-QA/data.tar.xz
-tar -xvf data.tar.xz
-```
-
-Prepare the above data, and we provide two linearization methods:
-- Normal linearization：
-
-```
-cd ./data_process/
-python webqsp_preprocess.py
+cd ./InstructERC
 ```
 
-- Linearization of merging complex subgraphs：
+To reproduce the results, we have three pipelines available.
+
+- If you want to reproduce the Main Result Reproduction, you can run the ***train_and_inference_Uni.sh***
 
 ```
-cd ./data_process/
-python webqsp_preprocess_complex2.py
-```
-
-Our code is thoroughly commented! The final output will consist of three TSV files for encoding.
-
-
-### Pretraining DPR：
-
-We use linearized subgraphs to perform structure knowledg aware pretraining on the processed TSV files.
-
-1. First, we randomly extract 1 million subgraphs from the preprocessed TSV files:
-
-```
-bash random_sample_complex1.sh
-```
-
-- Our 1 million subgraphs can be directly downloaded [here](https://drive.google.com/drive/folders/1UnWOB0zApioYOJ4GuS3JKSWAkkeDXxQv?usp=drive_link).
-
-2. For DPR pretraining, we provide 3 modes:
-
-- Joint pretraining for **Mask Language Modeling** and **Contrastive Learning**
-
-```
-cd ./DPR_pretraining/bash/
-bash train_mlm_contrastive_mask.sh
-```
-
-- Only Mask Language Modeling:
-
-```
-bash train-mlm.sh
-```
-
-- Only Contrastive Learning
-
-```
-bash train-contrastive.sh
+bash train_and_inference_Uni.sh
 ```
 
 
 
-### Training DPR：
-Due to the pretraining process, we first load the checkpoint for structured pretraining, and then train DPR:
-
+The Shellparameter that controls the mainprocess: Flag
 ```
-cd ./DPR-main/
-bash train_encoder1.sh
-```
-
-The detailed information can be referred to the GitHub repository of DPR. [DPR](https://github.com/facebookresearch/DPR)
-
-
-### Encoding TSV into embedding files:
-
-Using the trained DPR, encode the three TSV files into embedding vector files. The file "all_relations.tsv" is split into 100 parts for encoding, and this process takes a long time.
-
-```
-cd ./DPR-main/
-for id in {1..10..1} 
-   bash gen_all_relation_emb${id}.sh
-bash gen_condense_hyper_relation_emb.sh
-bash gen_condense_hyper_relation_emb.sh
-```
-
-In each bash command:
-- WEBQSP_DIR is your base path.
-- model_dir is the path to your DPR checkpoint.
-- out_dir is the path to the output directory for the encoded embeddings.
-
-
-
-### Preprocessing the input data for FID:
-
-Using FAISS, filter out the top-k subgraphs corresponding to each question from the generated subgraph embeddings in the previous step.
-
-```
-python dpr_inference.py
-```
-
-After generating the DPR output data, further filtering and conversion into the format compatible with FID can be done using fid_preprocess.py.
-
-```
-python fid_preprocess.py
-```
-
-Our Subgraph Retrieval results are shown here：
-![image](https://github.com/dongguanting/SKP-for-KBQA/assets/60767110/fad13037-4b5c-46f5-abd6-424f1bc0d731)
-
-
-
-### Training and Testing with FiD:
-
-Next, the input to the [FiD](https://github.com/facebookresearch/FiD) reader is created for each question using the most relevant relations retrieved by DPR.Finally, a FiD model can be trained using the SKP input. 
-
-If you want to reproduce the results for inference directly, our FID inputs and model have been made publicly available. 
-- Our FID input can be downloaded [here](https://drive.google.com/drive/folders/1UnWOB0zApioYOJ4GuS3JKSWAkkeDXxQv?usp=drive_link).
-- Our trained FiD checkpoint can be downloaded [here](https://drive.google.com/drive/folders/1UnWOB0zApioYOJ4GuS3JKSWAkkeDXxQv?usp=drive_link). (Our model was trained in late 2020, so you may need to check out an older version of FiD.)
-
-
-Train FiD
-
-```
-python -u train.py \
-  --train_data_path {data dir}/webqsp_train.json \
-  --dev_data_path {data dir}/webqsp_dev.json \
-  --model_size large \
-  --per_gpu_batch_size 1 \
-  --n_context 100 \
-  --max_passage_length 200 \
-  --total_step 100000 \
-  --name {checkpoint name} \
-  --model_path {loading backbone model path} \
-  --checkpoint_dir {save path} \
-  --eval_freq 250 \
-  --eval_print_freq 250
-```
-
-Inference FiD
-
-```
-python test.py \
-  --model_path {checkpoint path} \
-  --test_data_path {data path}/webqsp_test.json \
-  --model_size large \
-  --per_gpu_batch_size 4 \
-  --n_context 100 \
-  --name {checkpoint name} \
-  --checkpoint_dir {base dir}/FiD-snapshot_nov_2020 \
-```
-
-Our Final Result：
-
-```
-2022-12-26 11:43:51 | WARNING | __main__ | 0, total 1639 -- average = 0.796
-2022-12-26 11:43:51 | INFO | __main__ | total number of example 1639
-2022-12-26 11:43:51 | INFO | __main__ | EM 0.795812
+the value of which is 0 or 1. 
+The mainprocess will interrupt when flag is 0
 ```
 
 
--->
+The hyperparameters you need setting: 
+```
+1.MODEL_NAME (selections: ChatGLM, ChatGLM2, LLaMA, LLaMA2)
+# MODEL_NAME determines on which model base InstructERC will be fine-tuned.
+
+2.Experiments_setting (selections: LoRA, All-parameters)
+# The Experiments_setting parameter determines whether it is full parameter fine-tuning or efficient parameter fine-tuning.
+
+3.dataset (selections: IEMOCAP, MELD, EmoryNLP)
+# The specific dataset you want InstructERC to finetune on.
+
+4.accumulations (type:int)
+# Due to the limitations of the GPU, we have chosen the method of gradient accumulation for fine-tuning.
+
+5.graphics_card (type:int)
+# The graphics_card represents the number of graphics cards you use when fine-tuning.
+
+Notes: batch size = graphics_card * accumulations
+```
+
+The remaining subprocesses determined by these hyperparameters are designed to conduct different experiments.
+
+---
+
+- If you want to reproduce the Unified dataset Experiment, you can run the ***train_and_inference_Mixed.sh***
+
+```
+bash train_and_inference_Mixed.sh
+```
+Compared to train_and_inference_Uni.sh, you should overlook the hyperparameter dataset due to the unified dataset including all ERC datasets.
+
+---
+- If you want to reproduce the LoRA+Backbone Experiment, you can run the ***train_and_inference_Plain.sh***
+
+```
+bash train_and_inference_Mixed.sh
+```
+
+
+
 ## 📋 Result:
 
 ### Main Result
+<center>
 Table1: The main result on three benchmarks
 
 | Dataset          | IEMOCAP | MELD  | EmoryNLP | Average | type|
@@ -258,12 +220,15 @@ Table1: The main result on three benchmarks
 | ChatGLM| 36.04   | 46.41 | 30.86    | 37.77   | LLM|
 | ChatGLM2| 67.54  | 65.58 | 39.09    | 57.40   | LLM|
 | Llama  | 64.17   | 67.62 | 39.34    | 57.04   | LLM|
-| Llama2 | **71.39**| **69.15**| **41.37**| **60.64**|
+| Llama2 | **71.39**| **69.15**| **41.37**| **60.64**| LLM|
+</center>
 
 ### All Parameters vs Parameter Efficiency
 In order to investigate the effect of different parameter fine-tuning methods on the ERC task, we conducted comparative experiments in Table 2.
 
+<center>
 Table 2: The comparison results of different parameter fine-tuning settings on three benchmarks.
+
 | Dataset     | IEMOCAP | MELD   | EmoryNLP | Average |
 |:-----------:|---------|--------|----------|---------|
 | Models      | W-F1    | W-F1   | W-F1     | W-F1    |
@@ -277,7 +242,7 @@ Table 2: The comparison results of different parameter fine-tuning settings on t
 | ChatGLM2 | 67.54   | 65.58  | 39.09    | 57.40   |
 | Llama    | 69.71   | 68.89  | 39.90    | 59.50   |
 | Llama2   | **71.39**   | **69.15**  | **41.37**    | **60.64**   |
-
+</center>
 
 
 ### A.1 Unified dataset labeling
@@ -288,9 +253,9 @@ After completing the label mapping, there are a total of 9 kinds of emotional la
 
 
 Figure2: The Feeling Wheel[^1]
-<img width="668" alt="image" src="https://github.com/LIN-SHANG/InstructERC/assets/48848639/65526715-d02f-41f6-b0d8-3e5da7311e3f">
 
 
+<center>
 Table 3: Unified Label Mapping
 
 | Number | IEMOCAP | MELD | EmoryNLP | Final Emotion |
@@ -304,13 +269,15 @@ Table 3: Unified Label Mapping
 | 7      | scared  | fear   | frustrated | fear          |
 | 8      | N/A     | N/A    | peaceful | peaceful      |
 | 9      | N/A     | disgust | N/A      | disgust       |
+</center>
 
 
 ### A.2 Unified dataset Experiment
 We still utilize the LoRA method in PEFT to train InstructERC on the unified dataset, and the training results are evaluated on the three datasets respectively. Meanwhile, we design total mix and ratio mix experiments to explore the impact of different data mixing strategies and data quantities on the model. On below basis, we further explore the impact of data sampling ratio on the model's performance.
-The details are shown in the Table 4, a more intutive presentation is shown in Figure 3.
+The details are shown in the Table 5, a more intutive presentation is shown in Figure 6.
 
-Table 4: The Unified Dataset Experiments of Llama2 on three benchmarks
+<center>
+
 | Data Precent | IEMOCAP W-F1 (Total Mix) | IEMOCAP W-F1 (Ratio Mix) | IEMOCAP W-F1 (Single) | MELD W-F1 (Total Mix) | MELD W-F1 (Ratio Mix) | MELD W-F1 (Single) | EmoryNLP W-F1 (Total Mix) | EmoryNLP W-F1 (Ratio Mix) | EmoryNLP W-F1 (Single) |
 | :------------: | ----------------------- | ----------------------- | --------------------- | --------------------- | --------------------- | ------------------ | ------------------------ | ------------------------ | ---------------------- |
 | 1            | 68.99                   | 68.99                   | **71.39**             | 68.07                 | 68.07                 | **69.15**          | 40.27                    | 40.27                    | **41.37**              |
@@ -320,9 +287,7 @@ Table 4: The Unified Dataset Experiments of Llama2 on three benchmarks
 | 1/16         | 57.77                   | 53.40                   | **60.42**             | 61.15                 | 58.42                 | **62.89**          | 37.19                    | **37.60**                | 36.83                  |
 | 1/32         | 45.89                   | 48.50                   | **54.76**             | 57.38                 | **57.76**             | 57.72              | **37.09**                | 36.09                    | 34.03                  |
 | 1/64         | 38.42                   | **43.07**               | 30.34                 | **54.26**             | 53.29                 | 45.48              | **35.19**                | 34.65                    | 26.10                  |
-
-Figure 3: The low resourece exploring on three benchmarks using different data mixing strategies
-<img width="984" alt="image" src="https://github.com/LIN-SHANG/InstructERC/assets/48848639/a9a734b7-a893-4ec1-b067-dbebe6cd2ccd">
+</center>
 
 
 
