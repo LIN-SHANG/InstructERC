@@ -130,9 +130,8 @@ pip3 install -r requirements.txt
 Follow this [link](https://huggingface.co/docs/hub/models-downloading).
 
 ### ONLY Validate Our Work
-You can follow following instructions to reproduce the results by using files in demo folders.
-
-COMING SOON……
+Due to Meituan's code review process, the public release date of the model parameters is unpredictable. However, based on our tests on other machines, we have achieved performance results that fluctuate by ±0.5 compared to the data presented in the paper. Additionally, for the implementation of the demonstration, you can refer to the following link:
+https://github.com/UKPLab/sentence-transformers
 
 ### Completely repeat all our work
 ```
