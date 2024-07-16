@@ -16,13 +16,11 @@ This repository contains the open-sourced official implementation of our work **
 If you find this repo helpful, please cite the following paper:
 
 ```bibtex
-@misc{lei2023instructerc,
-      title={InstructERC: Reforming Emotion Recognition in Conversation with a Retrieval Multi-task LLMs Framework}, 
-      author={Shanglin Lei and Guanting Dong and Xiaoping Wang and Keheng Wang and Sirui Wang},
-      year={2023},
-      eprint={2309.11911},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{lei2023instructerc,
+  title={Instructerc: Reforming emotion recognition in conversation with a retrieval multi-task llms framework},
+  author={Lei, Shanglin and Dong, Guanting and Wang, Xiaoping and Wang, Keheng and Wang, Sirui},
+  journal={arXiv preprint arXiv:2309.11911},
+  year={2023}
 }
 ```
 
