@@ -43,12 +43,10 @@ If you find this repo helpful, please cite the following paper:
 In this study, we propose a novel approach, namely **InstructERC, to reformulates the ERC task from a discriminative framework to a generative framework based on LLMs.** InstructERC has two significant contributions: Firstly, InstructERC introduces a simple yet effective retrieval template module, which helps the model explicitly integrate multi-granularity dialogue supervision information by concatenating the historical dialog content, label statement, and emotional domain demonstrations with high semantic similarity. Furthermore, we introduce two additional emotion alignment tasks, namely speaker identification and emotion prediction tasks, to implicitly model the dialogue role relationships and future emotional tendencies in conversations. **Our LLM-based plug-and-play plugin framework significantly outperforms all previous models and achieves comprehensive SOTA on three commonly used ERC datasets.** Extensive analysis of parameter-efficient and data-scaling experiments provide empirical guidance for applying InstructERC in practical scenarios. Our code will be released after blind review.
 
 ## 🍯 Overall Framework
-![image](https://github.com/LIN-SHANG/InstructERC/assets/60767110/c0cc9d87-2bea-4783-97be-f1d319c61ec3)
+![image](https://github.com/user-attachments/assets/c6fb1704-223d-4e6f-9d0c-492a3bdf720e)
 
 
 ## 🎯 Quick Start
-
-<!-- Our work is built on the [UniK-QA](https://github.com/facebookresearch/UniK-QA) framework. -->
 
 
 This repo consists of following files:
