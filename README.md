@@ -1,4 +1,4 @@
-# InstructERC: Reforming Emotion Recognition in Conversation with Multi-task Retrieval-Augmented Large Language Models
+# 🔥 InstructERC
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instructerc-reforming-emotion-recognition-in/emotion-recognition-in-conversation-on-4)](https://paperswithcode.com/sota/emotion-recognition-in-conversation-on-4?p=instructerc-reforming-emotion-recognition-in)
 
@@ -17,11 +17,26 @@ If you find this repo helpful, please cite the following paper:
 
 ```bibtex
 @article{lei2023instructerc,
-  title={Instructerc: Reforming emotion recognition in conversation with a retrieval multi-task llms framework},
-  author={Lei, Shanglin and Dong, Guanting and Wang, Xiaoping and Wang, Keheng and Wang, Sirui},
-  journal={arXiv preprint arXiv:2309.11911},
-  year={2023}
+  author       = {Shanglin Lei and
+                  Guanting Dong and
+                  Xiaoping Wang and
+                  Keheng Wang and
+                  Sirui Wang},
+  title        = {InstructERC: Reforming Emotion Recognition in Conversation with a
+                  Retrieval Multi-task LLMs Framework},
+  journal      = {CoRR},
+  volume       = {abs/2309.11911},
+  year         = {2023},
+  url          = {https://doi.org/10.48550/arXiv.2309.11911},
+  doi          = {10.48550/ARXIV.2309.11911},
+  eprinttype    = {arXiv},
+  eprint       = {2309.11911},
+  timestamp    = {Tue, 30 Jan 2024 15:46:48 +0100},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2309-11911.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
+
+
 ```
 
 ## Introduction
