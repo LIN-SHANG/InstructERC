@@ -1,4 +1,4 @@
-# InstructionERC
+# InstructERC: Reforming Emotion Recognition in Conversation with Multi-task Retrieval-Augmented Large Language Models
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/instructerc-reforming-emotion-recognition-in/emotion-recognition-in-conversation-on-4)](https://paperswithcode.com/sota/emotion-recognition-in-conversation-on-4?p=instructerc-reforming-emotion-recognition-in)
 
@@ -10,7 +10,7 @@
 
 This repository contains the open-sourced official implementation of our work **InstructERC**:
 
-[InstructERC: Reforming Emotion Recognition in Conversation with a Retrieval Multi-task LLMs Framework](https://arxiv.org/abs/2309.11911)
+[InstructERC: Reforming Emotion Recognition in Conversation with Multi-task Retrieval-Augmented Large Language Models](https://arxiv.org/abs/2309.11911)
 
 
 If you find this repo helpful, please cite the following paper:
